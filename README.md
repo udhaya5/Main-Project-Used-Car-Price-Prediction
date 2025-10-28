@@ -1,19 +1,18 @@
 # Main-Project-Used-Car-Price-Prediction
 Used car price prediction is a machine learning technique that uses a car's features, such as its year, mileage, make, model, and fuel type, to estimate its current market value. The goal is to overcome the difficulties of subjective pricing in the used car market by providing an objective, data-driven valuation for sellers and buyers.
+![](https://github.com/udhaya5/Main-Project-Used-Car-Price-Prediction/blob/main/Headerheader.jpg)
 
-
-> 🔬 A data-driven machine learning project that predicts diabetes subtypes using genetic, environmental and lifestyle factors.
+> 🔬 A data-driven machine learning project that USED CARS PRICE PREDICTION
 
 ---
 
 ## 🧩 Project Overview
-
-This project uses a comprehensive dataset encompassing multiple diabetes subtypes, including Steroid‑Induced Diabetes, Neonatal Diabetes Mellitus (NDM), Prediabetes, Type 1 Diabetes, and Wolfram Syndrome. The dataset includes medical, genetic, environmental, and lifestyle attributes to provide a holistic view of each patient’s profile. The aim is to help researchers and healthcare professionals understand how these factors interact and contribute to the development and progression of different diabetes subtypes, enabling insights for personalized treatment, risk assessment, and improved disease management.
+The Used Cars Price Prediction project focuses on developing a machine learning model that can accurately estimate the resale value of a used car based on various attributes such as brand, model, year of manufacture, mileage, fuel type, transmission, and ownership details.
+The project involves collecting and analyzing real-world car data, performing feature engineering, and applying regression techniques to predict car prices.
+This project aims to help buyers determine fair prices before purchasing a used car and sellers/dealers set competitive yet reasonable selling prices. It also demonstrates the power of data science in solving real-world business problems related to pricing and valuation.
 
 ### 🎯 Objectives
-- Predict the diabetes subtype from patient health indicators.  
-- Identify key predictors of each subtype.  
-- Evaluate multiple models and select the best-performing classifier.  
+The main objective of this project is to build a model that can accurately predict the price of a used car. It also aims to understand which factors affect car prices the most and to make the car buying and selling process more transparent and data-driven.
 
 ---
 
@@ -21,12 +20,12 @@ This project uses a comprehensive dataset encompassing multiple diabetes subtype
 1. Open the notebook:
 ### ▶️ Run Directly in Google Colab
 You can execute the entire workflow without any setup:
-🔗 [**Open Project in Colab**](https://colab.research.google.com/drive/1G_jjmFN5ur6ABKDNm6I8A5J6T5J658Eb?usp=sharing)
+🔗 [**Open Project in Colab**](https://colab.research.google.com/drive/1p6Y0i_qJts2V2C9zwssh-uBK1AqpHaMU?usp=sharing)
 #### Codes and Resources Used
 - **Editor Used:** Google Colab / Jupyter Notebook  
 - **Python Version:** 3.12  
 - **Platform:** Google Colab  
-- **Environment:** Machine Learning / Health Informatics  
+- **Environment:** Machine Learning / Automative Domain
 
 #### Python Packages Used
 - **General Purpose:** `os`, `warnings`, `joblib`, `requests`  
@@ -35,27 +34,26 @@ You can execute the entire workflow without any setup:
 - **Machine Learning:** `scikit-learn`, `xgboost`
 
 # Data
-The dataset is a crucial part of this project. It combines clinical, genetic, environmental, and lifestyle features to predict diabetes subtypes.
+The dataset is a crucial part of this project. It contains information about used cars, including features such as brand, model, year of manufacture, mileage, fuel type, transmission, ownership history, engine size, and price.
+
+This data will be used to train and test machine learning models to predict the resale price of a car based on these attributes
 
 I structure this as follows - 
 
-## Source Data
-**Description:** Contains 70,000 patient samples with 34 features including genetic markers, autoantibodies, family history, environmental factors, lifestyle attributes, and clinical measures.
+## Data Source & Description
 
-**Target Feature:** Diabetes_Subtype with 13 classes:
-0: Steroid-Induced Diabetes
-1: Neonatal Diabetes Mellitus (NDM)
-2: Prediabetic
-3: Type 1 Diabetes
-4: Wolfram Syndrome
-5: LADA
-6: Type 2 Diabetes
-7: Wolcott-Rallison Syndrome
-8: Secondary Diabetes
-9: Type 3c Diabetes
-10: Gestational Diabetes
-11: Cystic Fibrosis‑Related Diabetes (CFRD)
-12: MODY
+Source: Kaggle
+
+Author: V Rajesh Sharma
+
+Last Updated: 12 days ago
+
+Location: All Datasets on Kaggle
+
+**Description:**
+The dataset contains 7,400 used car listings with 29 features including car specifications, seller details, and the target variable (selling price). Each row represents a single car, and each column represents a specific attribute.
+
+**Target Feature:** Selling price,price,current price,resale value
 
 ## Data Acquisition
 - Data can be downloaded directly from the repository or other open-source sources.
@@ -66,15 +64,15 @@ I structure this as follows -
 ## Data Preprocessing
 To make the dataset suitable for modeling:
 
-1.Checked for missing values → none found
+1.Checked for missing values → founded
 
-2.Verified duplicate rows → none found
+2.Verified duplicate rows → founded
 
 3.Removed outliers using IQR method
 
 4.Applied skewness correction and transformations (log/square root)
 
-5.Scaled numeric features using StandardScaler / MinMaxScaler
+5.Scaled numeric features using StandardScaler
 
 6.Encoded categorical variables using one-hot encoding or label encoding
 
@@ -98,34 +96,27 @@ To make the dataset suitable for modeling:
 
 
 #### 📊 Dataset
-- **Rows × Columns:** Rows × Columns: 70,000 × 34
+- **Rows × Columns:** Rows × Columns: 7400 × 29
 
-- **Features include:** genetic markers, autoantibodies, family history, environmental factors, lifestyle attributes, clinical measures
+- **Features include:** name,year,fuel,km-driven,seller_type
 
 - **No missing values or duplicates**
 
 #### 🤖 Model Building
 #### 🧩 Algorithms Used
 
-The following machine learning algorithms were implemented and compared to identify the best-performing model for multiclass diabetes subtype prediction:
+The following machine learning algorithms were implemented and compared to identify the best-performing model price prediction:
 
 - Random Forest Classifier 🌲
 
 - Logistic Regression 📈
 
-- Naive Bayes Classifier 🧮
+- XG Boosting Classifier 🚀
 
-- Decision Tree Classifier 🌳
-
-- Gradient Boosting Classifier 🚀
-
-- Support Vector Machine (SVM) ⚙️
-
-- K-Nearest Neighbors (KNN) 👥
 
 #### 🎯 Model Tuning
 
-**Hyperparameter Optimization:** Conducted using RandomizedSearchCV (3-fold cross-validation)
+**Hyperparameter Optimization:** Conducted using Grid SearchCV (3-fold cross-validation)
 
 **Parameters fine-tuned include:**
 
@@ -141,7 +132,7 @@ The following machine learning algorithms were implemented and compared to ident
 
 #### 🧠 Model Evaluation Metrics
 
-Each model was evaluated using multiple metrics to ensure balanced performance across all diabetes subtypes:
+Each model was evaluated using multiple metrics to ensure balanced performance across all cars price prediction:
 
 #### Metric	Description
 | Metric                   | Description                                             |
@@ -171,87 +162,149 @@ Each model was evaluated using multiple metrics to ensure balanced performance a
 #### 📈 Sample Prediction
 #### Sample Input
 
-| Feature              | Value |
-| -------------------- | ----- |
-| Age                  | 45    |
-| Blood Pressure       | 130   |
-| Blood Glucose Levels | 210   |
-| BMI                  | 29.3  |
-| Genetic Marker 1     | 1     |
-| Family History       | Yes   |
-| Physical Activity    | Low   |
-| Diet Score           | 6     |
+| **Input Feature** | **Example Value** |
+| ----------------- | ----------------- |
+| Name              | Maruti Swift VDI  |
+| Year              | 2017              |
+| Fuel              | Diesel            |
+| Km_Driven         | 45,000            |
+| Seller_Type       | Individual        |
+| Transmission      | Manual            |
+| Owner             | First Owner       |
+
 
 #### Sample Output
 
-| Diabetes Subtype         | Probability |
-| ------------------------ | ----------- |
-| Prediabetes              | 0.65        |
-| Type 1 Diabetes          | 0.15        |
-| Steroid-Induced Diabetes | 0.05        |
-| Wolfram Syndrome         | 0.02        |
-| NDM                      | 0.13        |
-
-#### Predicted Subtype: Prediabetes
-
-**Top Contributing Features:** Genetic Marker 1, BMI, Diet Score
+####Predicted Selling Price: ₹4,80,000
 
 ## Final Conclusion
 
-1.A comprehensive machine learning pipeline was developed to predict diabetes subtypes using clinical, genetic, environmental, and lifestyle factors.
+1.The Used Car Price Prediction project successfully applies machine learning to estimate the resale value of cars based on key factors such as brand, model, year, mileage, fuel type, and transmission type.
 
-2.Multiple models were trained and evaluated: Random Forest, Logistic Regression, Naive Bayes, Decision Tree, Gradient Boosting, SVM, and KNN.
+2.After training and optimizing several models, algorithms like Random Forest and XGBoost provided the most accurate results.
 
-3.Random Forest emerged as the best-performing model, achieving 92% accuracy and high performance across Precision, Recall, F1-Score, and AUC-ROC metrics.
+3.The project demonstrates how data-driven techniques can help buyers and sellers make informed and fair pricing decisions in the used car market. It improves transparency, saves time, and enhances the efficiency of price evaluation.
 
-4.Key predictive features include: BMI, Blood Glucose Levels, Genetic Marker 1, Diet Score, Insulin Levels, and Family History.
-
-5.The model effectively captures complex interactions between genetic, lifestyle, and clinical factors, providing interpretable insights for diabetes subtype prediction.
-
-6.This project demonstrates the potential of machine learning in healthcare analytics for early detection, personalized risk assessment, and targeted interventions.
-
-7.Future work can include deep learning models, ensemble methods, explainable AI (SHAP/LIME), and deployment as a web/mobile application.
+4.Overall, the project proves that machine learning can be effectively used to predict used car prices with good accuracy, and it lays the foundation for further improvements such as real-time data integration, image-based evaluation,and deployment as a web or mobile application.
 
 # 🚀 Future Enhancements
-Outline potential future work that can be done to extend the project or improve its functionality. This will help others understand the scope of your project and identify areas where they can contribute.
-**1.Hyperparameter Optimization:** Use finer GridSearch or Bayesian optimization.
+To improve the performance, usability, and real-world applicability of the Used Cars Price Prediction model, the following enhancements can be implemented in future versions:
 
-**2.Feature Engineering:** Add derived features, feature selection, or PCA.
+## 🔁 1. Integration of Real-Time Data
+- Connect APIs from platforms like Cars24, OLX, or Autotrader to fetch live car listing data.
+- Continuously update and retrain the model with recent data to reflect current market trends and improve prediction accuracy.
 
-**3.Class Imbalance Handling:** Use SMOTE or class weighting.
+## 🧠 2. Advanced Machine Learning Models
+- Experiment with ensemble algorithms such as XGBoost, LightGBM, and CatBoost for better performance.
+- Use deep learning models (e.g., ANN, LSTM) to capture time-based pricing patterns.
+- Implement AutoML tools to automatically find the best model and tune hyperparameters efficiently.
 
-**4.Ensemble Learning:** Explore stacking or boosting (XGBoost, LightGBM).
+## ⚙️ 3. Feature Expansion
+- Include more predictive variables such as fuel efficiency, accident history, number of owners, service records, and location.
+- Add macro-level factors like fuel price trends, regional demand, and seasonality to improve accuracy.
 
-**5.Data Expansion:** Incorporate additional genetic/environmental/lifestyle factors.
+## 📸 4. Image-Based Price Estimation
+- Integrate computer vision (CV) techniques to analyze car images and detect condition, color, dents, or modifications.
+- Combine image analysis with tabular data to create a hybrid model for more realistic pricing.
 
-**6.Deployment & Monitoring:** Real-time prediction pipeline with continuous monitoring and retraining.
+## 🧩 5. Explainability and Transparency
+- Use interpretability tools like SHAP or LIME to explain how each feature impacts the predicted price.
+- Provide clear insights to users (e.g., “Low mileage increased the estimated price by ₹50,000”).
+
+## 🌐 6. Web or Mobile App Deployment
+- Develop a user-friendly web dashboard or mobile application where users can input car details and instantly get price estimates.
+- Add features such as price comparisons, market trends, and recommendations for better user experience.
+
+## 💰 7. Dynamic Pricing Suggestions
+- Suggest the best time to buy or sell based on historical and seasonal trends.
+- Recommend negotiation ranges based on car condition and current market demand.
+
+## 📍 8. Geo-Based Analysis
+- Include location intelligence to adjust prices according to the city or region, as car values vary geographically.
+
+## 💬 9. User Feedback Integration
+- Allow users to rate the accuracy of predictions.
+- Use this feedback loop to continuously retrain and improve the model over time.
+
+## 🏢 10. Integration with Dealership Systems
+- Partner with car dealerships or resale platforms to integrate the model as a B2B service for accurate, data-driven pricing insights.
 
 # Model Optimization
 
-**1.Address Class Imbalance**
+Model optimization is a crucial step in improving the accuracy, efficiency, and generalization ability of the used car price prediction model. The goal is to fine-tune the model parameters, enhance feature selection, and minimize errors between predicted and actual car prices.
 
-- Apply SMOTE, class weighting, or targeted oversampling/undersampling to improve predictions for underrepresented classes.
+**Data Preprocessing Optimization**
 
-**2.Ensemble Techniques**
+**Handling Missing Values:** Missing or inconsistent data (e.g., missing mileage or fuel type) were handled using imputation techniques such as mean, median, or mode substitution.
 
-- Combine your trained models (Random Forest, Logistic Regression, Naive Bayes) using stacking to leverage complementary strengths.
+**Outlier Removal:** Outliers in price, mileage, or engine capacity were detected using the IQR (Interquartile Range) or Z-score method to improve model stability.
 
-- Explore boosting models like XGBoost, LightGBM, or CatBoost for higher predictive performance.
+**Feature Scaling:** Applied StandardScaler or MinMaxScaler to normalize numerical features and prevent high-value features (e.g., engine size, mileage) from dominating the model.
 
-**3.Cross-Validation Enhancements**
+**2.Feature Engineering and Selection**
+Encoding Categorical Data: Converted categorical variables (like fuel type, transmission, brand) into numeric form using One-Hot Encoding or Label Encoding.
 
-- Use stratified k-fold cross-validation to ensure consistent performance across all classes.
+**Feature Importance Analysis:** Used Random Forest feature importance and correlation matrix to identify key predictors such as car age, mileage, engine capacity, and brand.
 
-- Monitor metrics per fold to detect potential overfitting
+**Dimensionality Reduction:** Implemented PCA (Principal Component Analysis) to reduce redundant features and improve model training efficiency.
+
+**3.Model Selection and Optimization**
+- **Baseline Models:** Started with simple models like Linear Regression and Decision Tree Regressor to establish a baseline performance.
+
+- **Advanced Algorithms:** Implemented and compared advanced models like:
+
+**Random Forest Regressor**
+
+**Gradient Boosting Regressor**
+
+**XGBoost / LightGBM**
+
+**Performance Metrics Used:** Evaluated models using:
+
+**R² Score**
+
+**Mean Absolute Error (MAE)**
+
+**Root Mean Square Error (RMSE)**
+
+**4.Hyperparameter Tuning**
+To further enhance model performance, Grid Search CV and Randomized Search CV were used to find the best hyperparameters for tree-based models.
+
+**Example Parameters Tuned:**
+
+- For Random Forest: n_estimators, max_depth, min_samples_split, min_samples_leaf
+
+- For XGBoost: learning_rate, n_estimators, max_depth, subsample, colsample_bytree
+
+This tuning helped in minimizing overfitting and improving prediction accuracy.
+
+**5.Cross-Validation**
+- Applied K-Fold Cross Validation (usually K=5 or 10) to evaluate model performance on multiple subsets of the data.
+
+- Ensured the model generalizes well to unseen data and prevents overfitting.
+
+**6.Ensemble Optimization**
+- Combined multiple models using Ensemble Techniques such as:
+
+- Stacking Regressor
+
+- Voting Regressor
+
+This approach improved robustness and reduced variance in predictions.
+
+**7.Final Model Deployment**
+After optimization, the best-performing model (e.g., XGBoost or Random Forest) was selected based on cross-validation results and deployed for real-time price prediction.
 
 # Acknowledgments/References
-Acknowledge any contributors, data sources, or other relevant parties who have contributed to the project. This is an excellent way to show your appreciation for those who have helped you along the way.
-- Dataset inspired by open-source health data repositories
+I would like to express my gratitude to all the contributors and sources that made this project possible.
 
-- Image credits: rashadashurov @ VectorStock
+**Dataset Source:** Kaggle (Author: V Rajesh Sharma) — Used Cars dataset utilized for model training and evaluation.
 
-- README template adapted from Pragyy’s Data Science Readme Template
+**Data Inspiration:** Based on publicly available automotive datasets and information from platforms like CarDekho, OLX, and Cars24.
 
+**README Template:** Adapted from Pragyy’s Data Science Readme Template.
+
+**Acknowledgment:** Thanks to the open-source data science community for sharing datasets, tools, and knowledge that supported the completion of this project.
 
 # License
 Specify the license under which your code is released. Moreover, provide the licenses associated with the dataset you are using. This is important for others to know if they want to use or contribute to your project. 
